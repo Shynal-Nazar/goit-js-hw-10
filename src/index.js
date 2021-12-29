@@ -18,6 +18,7 @@ function onCountriesFetch(evt) {
   //   console.log(inputText);
   if (inputText.length === 0) {
     refEl.countryList.innerHTML = '';
+    refEl.countryInfo.innerHTML = '';
     return;
   } else {
     fetchCountries(inputText)
@@ -44,9 +45,9 @@ function addCountry(countries) {
 
 function addCartCountry(countries) {
   countries.map(({ name, capital, population, flags, languages }) => {
-    const markup = `<h1><img src="${flags.svg}" alt="Flag of ${
+    const markup = `<div class="infoCartTitleConteiner"><img src="${flags.svg}" alt="Flag of ${
       name.official
-    }" class="infoCartImage"> ${name.official}</h1>
+    }" class="infoCartImage"><h1 class="infoCartTitle"> ${name.official}</h1></div>
         <ul>
         <li>Capital: ${capital}</li>
         <li>Population: ${population}</li>
@@ -60,7 +61,7 @@ function addCartCountry(countries) {
 function addListCountries(countries) {
   const markupTwoPlus = countries
     .map(({ name, flags }) => {
-      return `<li class="countryListItem"><img src="${flags.svg}" alt="Flag of ${name.official}" class="countryListImage"> ${name.official}</li>`;
+      return `<li class="countryListItem"><img src="${flags.svg}" alt="Flag of ${name.official}" class="countryListImage"> <p class="countryListText">${name.official}</p></li>`;
     })
     .join('');
   refEl.countryInfo.innerHTML = '';

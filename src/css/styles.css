@@ -19,16 +19,30 @@ body {
   margin-bottom: 16px;
 }
 
+.infoCartTitleConteiner {
+  display: flex;
+}
+
 .infoCartImage {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
+}
+
+.infoCartTitle {
+  font-size: 30px;
+  margin-left: 10px;
 }
 
 .countryListItem {
   display: flex;
+  padding: 10px;
 }
 
 .countryListImage {
-  height: 100px;
+  height: 70px;
   width: 100px;
+}
+
+.countryListText {
+  padding: 10px;
 }
